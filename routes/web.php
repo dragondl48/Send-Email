@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\TestsEnrollmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/send-email',[SendMailController::class,'sendMail']);
+Route::get('/form-add',[SendMailController::class,'getForm']);
+ Route::post('/form-add',[SendMailController::class,'handleForm']);
+Route::get('/send-testenrollment',[TestsEnrollmentController::class,'sendTestNotification']);
